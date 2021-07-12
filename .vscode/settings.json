@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\BELLAMKONDA\\Desktop\\CP\\junit-4.9.jar"
+    ],
+    "java.project.sourcePaths": [
+        "10-handtodice-Java"
+    ],
+    "python.pythonPath": "C:\\Python39\\python.exe"
+}
