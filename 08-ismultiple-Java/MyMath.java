@@ -7,6 +7,14 @@
 class MyMath {
 	public boolean isMultiple(int m, int n){
 		// Your code goes here...
+		if (m == 0 && n == 0) {
+			return true;
+		}
+		else if (n != 0){
+			if (m % n == 0){
+				return true;
+			}
+		}
 		return false;
 	}
 }
