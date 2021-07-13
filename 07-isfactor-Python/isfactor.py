@@ -6,4 +6,18 @@
 
 
 def fun_isfactor(f, n):
+	if f < 0:
+		f = abs(f)
+	if f == 0 and n == 0:
+		return True
+	if n == 0:
+		return True
+	if f == n:
+		return True
+	if f == 0:
+		return False
+	if n % f == 0:
+		return True
 	return False # replace with your solution
+
+# print(fun_isfactor(2,2))
