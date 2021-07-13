@@ -16,7 +16,6 @@
 # with new rolls. Since new rolls come from the right (the one's digit), those are 2 and 1. So the
 # new hand is 421. It has to be sorted, but it already is. Finally, the dice was 2312, but we used 2
 # digits, so now it's just 23. We return the hand and the dice, so we return (421, 23).
-
 # For Example:
 # assert(playstep2(544, 456) == (644, 45))
 # If you have 2 matching dice (a pair), keep the pair and roll one die to replace the third die.
@@ -35,4 +34,42 @@
 
 def playstep2(hand, dice):
 	# your code goes here
-	pass
+
+	n = hand
+	l = []
+	# print(n)
+	while (n > 0):
+		x = n % 10
+		n = n // 10
+		# print(n)
+		l.append(x)
+	a,b,c = l[::-1]
+
+	list = []
+	if a != b!= c:
+		l.sort(reverse = True)
+		list.append(l[0])
+		x = dice % 10
+		list.append(x)
+		dice=dice//10
+		y=dice%10
+		dice = dice//10
+		list.append(y)
+		
+		list.sort(reverse=True)
+		num = list[0]*100 + list[1]*10 + list[2]
+		return (num, dice)
+	else:
+		if a==b or a==c or b==c :
+			last = dice %10
+			if a == b :
+				c = last
+			elif b == c :
+				a = last
+			else:
+				b = last
+		t = [a,b,c]
+		t.sort(reverse = True)	
+		num = t[0]*100 + t[1]*10 + t[2]
+		dice = dice//10
+		return (num, dice)
