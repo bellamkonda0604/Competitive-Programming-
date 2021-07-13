@@ -34,21 +34,11 @@
 
 def playstep2(hand, dice):
 	# your code goes here
-
-	n = hand
-	l = []
-	# print(n)
-	while (n > 0):
-		x = n % 10
-		n = n // 10
-		# print(n)
-		l.append(x)
-	a,b,c = l[::-1]
+	a,b,c = handtodice(hand)
 
 	list = []
 	if a != b!= c:
-		l.sort(reverse = True)
-		list.append(l[0])
+		list.append(max(a,b,c))
 		x = dice % 10
 		list.append(x)
 		dice=dice//10
@@ -73,3 +63,13 @@ def playstep2(hand, dice):
 		num = t[0]*100 + t[1]*10 + t[2]
 		dice = dice//10
 		return (num, dice)
+
+def handtodice(hand):
+	# your code goes here
+	n = hand
+	l = []
+	while (n > 0):
+		x = n % 10
+		n = n // 10
+		l.append(x)
+	return tuple(l[::-1])
