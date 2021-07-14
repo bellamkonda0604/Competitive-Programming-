@@ -6,4 +6,13 @@
 
 def isevenpositiveint(x):
 	# your code goes here
-	pass
+	if type(x) == list:
+		return False
+	if type(x) == str:
+		return False
+	if type(x) == tuple:
+		return False
+	if type(x) == int and x > 0 and x % 2 == 0:
+		return True
+	else:
+		return False
