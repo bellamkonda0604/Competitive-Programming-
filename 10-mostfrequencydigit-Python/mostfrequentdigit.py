@@ -4,4 +4,25 @@
 
 def mostfrequentdigit(n):
 	# your code goes here
-	pass
+	n = abs(n)
+	max = -1
+	maxCount = -1
+	if (n == 0):
+		return 0
+	while(n > 0):
+		temp = n
+		Digit = n % 10
+		count = 0
+		while temp > 0:
+			LastDigit = temp % 10
+			if ( LastDigit == Digit):
+				count = count + 1
+			temp = temp // 10
+		if( max < count):
+			max = count
+			maxCount = Digit
+		if (max == count):
+			if(Digit < maxCount):
+				maxCount = Digit
+		n = n // 10
+	return maxCount
