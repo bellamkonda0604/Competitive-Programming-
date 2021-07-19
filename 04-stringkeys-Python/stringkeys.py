@@ -24,7 +24,9 @@ class HashTable(object):
         Return -1 otherwise."""
         # Your code goes here
         hash = self.calculate_hash_value(string)
+        print(hash)
         if string in self.table[hash]:
+            print(hash)
             return hash
         return -1
 
@@ -35,4 +37,5 @@ class HashTable(object):
         hashvalue = ord(string[0])*100 + ord(string[1])
         return hashvalue
 
+print(HashTable('UDACITY'))
 
