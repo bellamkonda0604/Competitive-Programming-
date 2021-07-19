@@ -2,6 +2,9 @@
 in a hash table, where keys are calculated
 using the first two letters of the string."""
 
+from attr import has
+
+
 class HashTable(object):
     def __init__(self):
         self.table = [None]*10000
@@ -13,9 +16,12 @@ class HashTable(object):
         # Your code goes here
         hashvalue = self.calculate_hash_value(string)
         if self.table[hashvalue] != None:
+            print("hi")
             self.table[hashvalue] = (string)
+            print(self.table)
         else:
             self.table[hashvalue] = [string]
+        # print(hashvalue)
         return hashvalue
 
     def lookup(self, string):
@@ -23,11 +29,14 @@ class HashTable(object):
         string is already in the table.
         Return -1 otherwise."""
         # Your code goes here
-        hash = self.calculate_hash_value(string)
-        print(hash)
-        if string in self.table[hash]:
-            print(hash)
-            return hash
+        hashvalue = self.calculate_hash_value(string)
+        # print(hashvalue)
+        # print(self.table)
+        # print(hash)
+        # print(self.table[hashvalue])
+        # print(string)
+        if string in self.table[hashvalue]:
+            return hashvalue
         return -1
 
     def calculate_hash_value(self, string):
@@ -35,7 +44,8 @@ class HashTable(object):
         hash value from a string."""
         # Your code goes here
         hashvalue = ord(string[0])*100 + ord(string[1])
+        # print(hashvalue)
         return hashvalue
 
-print(HashTable('UDACITY'))
+# print(HashTable('UDACITY'))
 
