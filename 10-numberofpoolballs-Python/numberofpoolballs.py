@@ -7,6 +7,16 @@
 # limit our analysis to a "rack" of 15 balls. Rather, our pool table can contain an unlimited 
 # number of rows. For this problem and the next, you should research Triangular Numbers.
 
+
+
 def numberofpoolballs(rows):
 	# Your code goes here
-	pass
+	sum = 0
+	i = 1
+	while i <= rows:
+		sum += i
+		i += 1
+	# print(sum)
+	return sum
+
+# print(numberofpoolballs(2))
