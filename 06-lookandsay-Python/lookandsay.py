@@ -9,6 +9,28 @@
 # lookAndSay([3,3,8,-10,-10,-10]) == [(2,3),(1,8),(3,-10)]
 # lookAndSay([3,3,8,3,3,3,3]) == [(2,3),(1,8),(4,3)]
 
+
+
 def lookandsay(a):
 	# Your code goes here
-	pass
+	l = []
+	count = 1
+	item = -2000
+	if a == l:
+		return l
+	for i in a:
+		if i != item:
+			if item != -2000:
+				l.append((count, item))
+				item = i
+				count = 1
+			else:
+				item = i
+				count = 1
+		else:
+			item = i
+			count += 1
+	l.append((count, item))
+	return l
+
+# print(lookandsay([3,3,8,-10,-10,-10]))
