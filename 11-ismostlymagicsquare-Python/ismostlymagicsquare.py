@@ -15,4 +15,21 @@
 
 def ismostlymagicsquare(a):
 	# Your code goes here
-	pass
+	
+	diagonal1 = 0
+	diagonal2 = 0
+	for i in range(len(a)):
+		diagonal1 += a[i][i]
+		diagonal2 += a[i][len(a)-i-1]
+	if diagonal1 != diagonal2:
+		return False
+	for i in range(len(a)):
+		rowsum = 0
+		colsum = 0
+		for j in range(len(a[0])):
+			rowsum += a[i][j]
+			colsum += a[i][j]
+		if rowsum != colsum or rowsum != diagonal1 or colsum != diagonal1:
+			return False
+	return True
+
