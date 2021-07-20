@@ -7,6 +7,27 @@
 # Hint: you may wish to use a similar approach to how you solved isPerfectSquare on the hw.
 # Another hint: This can be written using just one or two lines of Python.
 
+import math
+
+def isperfectsquare(n):
+	# your code goes here
+	if(type(n) != int):
+		return False
+	if n > 0:
+		n = math.sqrt(n)
+		return math.ceil(n) == math.floor(n)
+			# return True
+	else:
+		return False
+
 def largestperfectsquare(n):
 	# your code goes here
-	pass
+	if isperfectsquare(n):
+		print(n)
+		return n
+	else:
+		# if isperfectsquare((n**0.5)):
+		# 	return math.ceil(n)
+		x = math.floor(n ** 0.5)
+		return x ** 2
+# print(largestperfectsquare(24))
