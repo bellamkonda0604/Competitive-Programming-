@@ -10,11 +10,11 @@ def multipolynomials(p1, p2):
 	m = len(p1)
 	n = len(p2)
 	l = [0] * (m + n - 1)
-	print(l)
+	# print(l)
 	for i in range(m):
 		for j in range (n):
 			# if p1[i] != 0 and p2[j] != 0:
 			l[i + j] += p1[i] * p2[j]
 	return l
 
-print(multipolynomials([1, -1], [1, -1]))
+# print(multipolynomials([1, -1], [1, -1]))
