@@ -17,6 +17,23 @@
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
 
+
+def squareofdigits(n):
+	res = 0
+	while (n > 0):
+		res += (n % 10)**2
+		n = n // 10
+	return res
+
 def ishappynumber(n):
 	# your code goes here
-	pass
+	if n <= 0:
+		return False
+	while (1):
+		if n == 1:
+			return True
+		if n == 4:
+			return False
+		else:
+			n = squareofdigits(n)
+	return False
