@@ -16,4 +16,4 @@ def digitcount(n):
 		n = n // 10
 	return count
 
-print(digitcount(521469784213))
+# print(digitcount(521469784213))
