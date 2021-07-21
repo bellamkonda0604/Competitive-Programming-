@@ -14,6 +14,33 @@
 # assert(nth_happy_number(7) == 28)
 # assert(nth_happy_number(8) == 31)
 
+def squareofdigits(n):
+	res = 0
+	while (n > 0):
+		res += (n % 10)**2
+		n = n // 10
+	return res
+
+def ishappynumber(n):
+	# your code goes here
+	if n <= 0:
+		return False
+	while (1):
+		if n == 1:
+			return True
+		if n == 4:
+			return False
+		else:
+			n = squareofdigits(n)
+	return False
 
 def nth_happy_number(n):
-	return 0
+	count = 0
+	i = 1
+	while True:
+		if ishappynumber(i):
+			count += 1
+		if count == n:
+			break
+		i += 1
+	return i
