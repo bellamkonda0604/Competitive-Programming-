@@ -28,7 +28,7 @@ def ismostlymagicsquare(a):
 		colsum = 0
 		for j in range(len(a[0])):
 			rowsum += a[i][j]
-			colsum += a[i][j]
+			colsum += a[j][i]
 		if rowsum != colsum or rowsum != diagonal1 or colsum != diagonal1:
 			return False
 	return True
