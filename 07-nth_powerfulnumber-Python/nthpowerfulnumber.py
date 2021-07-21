@@ -8,18 +8,18 @@ import math
 
 def powerful(n):
 	while (n % 2 == 0):
-		sum = 0
+		power = 0
 		while (n % 2 == 0):
 			n = n // 2
-			sum = sum + 1
-		if ( sum == 1):
+			power = power + 1
+		if (power == 1):
 			return False
-	for power in range(3, int(math.sqrt(n))+1, 2):
-		sum = 0
-		while (n % power == 0):
-			n = n // power
-			sum = sum + 1
-		if (sum == 1):
+	for i in range(3, int(math.sqrt(n))+1, 2):
+		power = 0
+		while (n % i == 0):
+			n = n // i
+			power = power + 1
+		if (power == 1):
 			return False
 	return (n == 1)
 
