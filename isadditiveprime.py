@@ -18,7 +18,7 @@
 
 def isprime(n):
     if n < 2:
-        return True
+        return False
     for i in range(2, n):
         if n % i == 0:
             return False
@@ -26,7 +26,7 @@ def isprime(n):
 
 def sumofdigits(n):
     sum = 0
-    while (n < 0):
+    while (n > 0):
         sum += n % 10
         n = n // 10
     return sum
