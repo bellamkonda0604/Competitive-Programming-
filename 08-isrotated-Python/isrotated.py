@@ -4,6 +4,13 @@
 # "XYZ" and "YXZ" then return false.
 
 
+def rotateright(s):
+	return s[len(s)-1] + s[0 : len(s)-1]
+
 def isrotated(str1, str2):
 	#Your code goes here
-	pass
+	for i in str1:
+		str1 = rotateright(str1)
+		if str1 == str2:
+			return True
+	return False
