@@ -7,7 +7,14 @@
 public class MyString {
 	public int vowelCount(String s){
 		// Your code goes here...
-		return 0;
+		int count = 0;
+		for(int i = 0; i < s.length(); i++) {
+			char ch = s.charAt(i);
+			if (ch == 'A' || ch == 'a' || ch == 'E' || ch == 'e' || ch == 'I' || ch == 'i' || ch == 'O' || ch == 'o' || ch == 'U' || ch == 'u'){
+				count = count + 1;
+			}
+		}
+		return count;
 	}
 	
 }
