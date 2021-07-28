@@ -4,5 +4,14 @@
 # (that is, 3). If L is empty, return 0. You may not use loops/iteration in this problem.
 
 
-def fun_recursions_alternatingsum(l): 
-	return 0
+from types import resolve_bases
+
+
+def fun_recursions_alternatingsum(l):
+	if l != 0:
+		even = sum(l[::2])
+
+		odd = sum(l[1::2]) 
+
+		result = even - odd
+	return result
