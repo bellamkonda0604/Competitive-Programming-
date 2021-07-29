@@ -6,25 +6,20 @@
 # is a rotation of itself.
 
 
-def len(n):
-	count = 0
-	while (n > 0):
-		n = n // 10
-		count += 1
-	return count
-
-# def rotateRight(s):
-# 	return s[len(s)-1:] + s[:len(s)-1]
-
 def isrotation(x, y):
 	# Your code goes here
-	if len(x) != len(y):
+	x = str(x)
+	y = str(y)
+	if(len(x) != len(y)):
 		return False
-	# for i in range(len(x)):
-	# 	x = rotateRight(x)
-	# 	if(x == y):
-	# 		return True
-	# return False
+	for i in range(len(x)):
+		if x[i:len(x)] + x[0:i] == y : 
+			return True
+		res = ''.join(reversed(x[i:len(x)])) + ''.join(reversed(x[0:i]))
+		if res == y:
+			return True
+	
+	return False
 	
 
 	
