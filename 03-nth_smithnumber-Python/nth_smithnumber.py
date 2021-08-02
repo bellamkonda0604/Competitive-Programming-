@@ -19,7 +19,7 @@ def sumofdigits(n):
     sum = 0
     while (n > 0):
         sum += (n % 10)
-        n = n//10
+        n = n // 10
     return sum    
 
 def primefactors(n):
@@ -34,7 +34,7 @@ def primefactors(n):
         else:
             i += 1
     
-    if n>1:
+    if n > 1:
         l.append(n)
         sum += sumofdigits(n)
     return sum
