@@ -6,5 +6,14 @@
 
 
 def fun_carrylessadd(x, y):
-	return 0
+	n = 0
+	carry = 0
+	while (x > 0):
+		sum = x % 10 + y % 10
+		sum = sum % 10
+		carry = sum * 10 ** n + carry
+		x = x // 10
+		y = y // 10
+		n = n + 1
+	return carry
 
