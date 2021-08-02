@@ -26,8 +26,8 @@ def primefactors(n):
     i = 2
     sum = 0
     l = []
-    while i*i <= n:
-        if n%i == 0:
+    while i * i <= n:
+        if n % i == 0:
             sum += sumofdigits(i)
             l.append(i)
             n //= i
