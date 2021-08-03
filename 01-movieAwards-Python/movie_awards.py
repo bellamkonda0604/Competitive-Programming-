@@ -21,4 +21,8 @@ the function should return as follows
 
 def movie_awards(oscarResults):
     # Your code goes here...
-    pass
+    dict = {}
+    for award, movie in oscarResults:
+        count = dict.get(movie, 0) + 1
+        dict[movie] = count
+    return dict
