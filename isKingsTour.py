@@ -18,6 +18,35 @@
 # returns True if it represents a legal Kings Tour 
 # and False otherwise.
 
+
+def getRowCol(L, i):
+    for row in range(len(L)):
+        for col in range(len(L[0])):
+            if (L[row][col] == i):
+                return [row,col]
+    return (-1,-1)
+
+def isValid (r1, c1, r2, c2):
+    if ((abs(r1 - r2) <= 1) and (abs(c1 - c2) <= 1)):
+        return True
+    return False
+
 def isKingsTour(board):
     # Your code goes here...
-    pass
+    l1 = len(board)
+    l2 = len(board[0])
+    for row in range(l1):
+        for col in range(l2):
+            if (board[row][col] == 0):
+                return False
+    i = 1
+    while (i < (l1 * l2)) :
+        r1, c1 = getRowCol(board, i)
+        r2, c2 = getRowCol(board, i + 1)
+        if (r1 == -1 or c1 == -1):
+            return False
+        i = i + 1
+        if (isValid(r1, c1, r2, c2) == False):
+            return False
+    return True
+
