@@ -26,4 +26,12 @@ Thus, in this example, friendsOfFriends should return:
 
 def friendsOfFriends(d):
     # Your code goes here...
-    return None
+    result = dict()
+    for person in d:
+        result[person] = set()
+        for friend in d[person]:
+            for friendsOfFriends in d[friend]:
+                if(friendsOfFriends != person and friendsOfFriends
+                not in d[person]):
+                    result[person].add(friendsOfFriends)
+    return result
