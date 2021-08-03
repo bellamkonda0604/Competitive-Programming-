@@ -16,7 +16,17 @@
 
 def cw(s):
     # Your code goes here...
-    return ""
+    flag = 1
+    s1 = ""
+    for i in s:
+        if(not i.isspace()):
+            s1 = s1 + i
+            flag = 1
+        else:
+            if (flag == 1):
+                s1 = s1 + " "
+            flag = 0
+    return s1
 
 assert(cw("a\nb") == "a b")
 assert(cw("a\n   \t    b") == "a b")
