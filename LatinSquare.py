@@ -1,5 +1,5 @@
 # isLatinSquare(a)
-# Write the function isLatinSquare(a) that takes a 2d list 
+# Write the function isLatinSquare(a) that takes a 2d list
 # and returns True if it is a Latin square and False otherwise.
 
 # Check for Latin square in the following link:
@@ -7,58 +7,63 @@
 
 # Write your own test cases...
 
-def isLatinSquare(mat):
+def isLatinSquare(lst):
     # Your code goes here..
 
-    N = len(mat)
-  
-    # Vector of N sets corresponding
-    # to each row.
+    N = len(lst)
+
     rows = []
     for i in range(N):
         rows.append(set([]))
-  
-    # Vector of N sets corresponding
-    # to each column.
+
     cols = []
     for i in range(N):
         cols.append(set([]))
-  
-    # Number of invalid elements
+
     invalid = 0
-  
+
     for i in range(N):
         for j in range(N):
-            rows[i].add(mat[i][j])
-            cols[j].add(mat[i][j])
-  
-            if (mat[i][j] > N or mat[i][j] <= 0) :
+            rows[i].add(lst[i][j])
+            cols[j].add(lst[i][j])
+
+            if (lst[i][j] > N or lst[i][j] <= 0):
                 invalid += 1
-             
-    # Number of rows with
-    # repetitive elements.
+
     numrows = 0
-  
-    # Number of columns with
-    # repetitive elements.
+
     numcols = 0
-  
-    # Checking size of every row
-    # and column
+
     for i in range(N):
-        if (len(rows[i]) != N) :
-            numrows+=1
-         
-        if (len(cols[i]) != N) :
-            numcols+=1
-  
-    if (numcols == 0 and numrows == 0 and invalid == 0) :
+        if (len(rows[i]) != N):
+            numrows += 1
+
+        if (len(cols[i]) != N):
+            numcols += 1
+
+    if (numcols == 0 and numrows == 0 and invalid == 0):
         return True
     else:
         return False
 
-matrix = [[1, 2, 3],
-          [3, 1, 2],
-          [2, 3, 1]]
 
-print(isLatinSquare(matrix))
+lst = [[1, 2, 3],
+       [3, 1, 2],
+       [2, 3, 1]]
+
+assert(isLatinSquare(lst) == True)
+
+lst1 = [[1, 2, 3, 4],
+        [4, 1, 2, 3],
+        [3, 4, 1, 2],
+        [2, 3, 4, 1]]
+
+assert(isLatinSquare(lst1) == True)
+
+lst2 = [[1, 2, 3, 4],
+        [2, 1, 3, 4],
+        [3, 4, 2, 1],
+        [4, 1, 3, 2]]
+
+assert(isLatinSquare(lst2) == False)
+print("All test cases passed")
